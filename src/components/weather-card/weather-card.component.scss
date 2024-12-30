@@ -1,0 +1,35 @@
+@import "../../styles";
+
+:host {
+  flex: 1;
+}
+
+.card {
+  background: $cloudy-background;
+  border-radius: 0.25rem;
+  margin: 0 1rem 1rem 0;
+  padding: 0.5rem;
+
+  .date-header {
+    border-bottom: 1px solid #d9d9d9;
+
+    .day {
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+
+  .label-value-pair {
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    min-width: 6rem;
+
+    label {
+      color: lightslategray;
+    }
+
+    .value {
+      font-weight: bold;
+    }
+  }
+}

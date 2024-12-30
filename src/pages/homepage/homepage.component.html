@@ -1,0 +1,44 @@
+<ng-container *ngIf="{
+    foreCast: foreCast$ | async
+  } as obs">
+
+  <div class="forecast" *ngIf="obs.foreCast">
+    <div class="header">
+      <h1>Weersvoorspelling {{selectedLocation}}</h1>
+      <div class="selection">
+        <span>Kies locatie:</span>
+        <select name="location" (change)="onLocationChange($event)" [ngModel]="selectedLocation">
+          <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="!obs.foreCast.isLoading && !obs.foreCast.error" class="content">
+      <div class="today">
+        <h2>Vandaag</h2>
+        <div class="content-today">
+          <app-weather-card [weather]="foreCastToday?.timelines?.daily?.[0]"></app-weather-card>
+          <app-chart [weather]="foreCastToday?.timelines?.hourly || []"></app-chart>
+        </div>
+      </div>
+      <div class="week">
+        <h2>De hele week</h2>
+        <div class="forecast-items">
+          <div class="forecast-item" *ngFor="let item of foreCastRestOfTheWeek?.timelines?.daily">
+            <app-weather-card [weather]="item"></app-weather-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading state -->
+    <ng-container *ngIf="obs.foreCast.isLoading">
+      <div>...loading</div>
+    </ng-container>
+
+    <!-- Error state -->
+    <ng-container *ngIf="obs.foreCast.error">
+      <div>Er is iets misgegaan</div>
+    </ng-container>
+
+  </div>
+</ng-container>

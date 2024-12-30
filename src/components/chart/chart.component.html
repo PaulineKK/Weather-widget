@@ -1,0 +1,14 @@
+<div class="button-bar">
+  <button [ngClass]="{'selected-button': selectedChartSubject === chartSubjects.Temperature}"
+    (click)="onChangeChart(chartSubjects.Temperature)">Temperatuur</button>
+  <button [ngClass]="{'selected-button': selectedChartSubject === chartSubjects.Rain}"
+    (click)="onChangeChart(chartSubjects.Rain)">Regen</button>
+  <button [ngClass]="{'selected-button': selectedChartSubject === chartSubjects.UvIndex}"
+    (click)="onChangeChart(chartSubjects.UvIndex)">UV index</button>
+</div>
+
+<div class="chart-container">
+  <canvas *ngIf="isBrowser" baseChart [datasets]="chartData" [labels]="chartLabels" [legend]="false"
+    [options]="chartOptions" [type]="'line'">
+  </canvas>
+</div>

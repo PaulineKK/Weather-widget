@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="date-header">
+    <div class="day">{{weather?.time | date: 'EEEE' }}</div>
+    <div class="date">{{weather?.time | date: 'd MMMM' }}</div>
+  </div>
+  <div class="label-value-pair">
+    <label>Max. temperatuur</label>
+    <div class="value">{{ weather?.values?.temperatureMax | number:'1.0-0' }}°C</div>
+  </div>
+  <div class="label-value-pair">
+    <label>Min. temperatuur</label>
+    <div class="value">{{weather?.values?.temperatureMin | number:'1.0-0'}}°C</div>
+  </div>
+  <div class="label-value-pair">
+    <label>Neerslag</label>
+    <div class="value">{{weather?.values?.rainAccumulationSum | number:'1.0-0'}} mm</div>
+  </div>
+  <div class="label-value-pair">
+    <label>Neerslagkans</label>
+    <div class="value">{{weather?.values?.precipitationProbabilityAvg | number:'1.0-1'}}%</div>
+  </div>
+  <div class="label-value-pair">
+    <label>Windkracht</label>
+    <div class="value">{{weather?.values?.windGustAvg}}</div>
+  </div>
+</div>

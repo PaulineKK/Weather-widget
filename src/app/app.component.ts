@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HomepageComponent } from '../pages/homepage/homepage.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [HomepageComponent],
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'weather_widget';
-}
+export class AppComponent { }

@@ -1,0 +1,35 @@
+@import "../../styles";
+
+:host {
+  display: block;
+  max-width: 600px;
+  width: 100%;
+}
+
+.button-bar {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto;
+
+  button {
+    border: 2px solid $light-blue;
+    border-radius: 0.25rem;
+    height: 2rem;
+  }
+}
+
+.selected-button {
+  background-color: $light-blue;
+}
+
+.chart-container {
+  height: 100%;
+  width: 100%;
+
+  canvas {
+    background-color: ghostwhite;
+    height: auto !important;
+    margin-top: 1rem;
+    width: 100% !important;
+  }
+}

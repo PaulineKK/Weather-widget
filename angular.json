@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "weather_widget": {
+      "i18n": {
+        "sourceLocale": "nl"
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -34,12 +37,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {

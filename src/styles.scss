@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$light-blue: #87ceeb;
+$cloudy-background: linear-gradient(to bottom right, $light-blue, #ffffff);
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
