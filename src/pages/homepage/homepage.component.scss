@@ -38,10 +38,16 @@
   .content-today {
     display: flex;
     flex-wrap: wrap;
+
+    app-chart {
+      margin-left: 1rem;
+    }
   }
 
   .forecast-items {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+    margin-bottom: 1rem;
   }
 }

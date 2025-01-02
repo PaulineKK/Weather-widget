@@ -47,42 +47,32 @@ export class ChartComponent {
       case ChartSubjectEnum.Temperature:
         this.selectedChartSubject = ChartSubjectEnum.Temperature;
         const temperatureValues = this.weather.slice(0, 11).map((item) => item.values.temperature);
-        this.chartOptions = {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: false
-            }
-          }
-        }
+        this.setChartOptions(false);
         this.chartData = [{ data: temperatureValues, label: 'Temperatuur' }];
         break;
       case ChartSubjectEnum.Rain:
         this.selectedChartSubject = ChartSubjectEnum.Rain
         const rainValues = this.weather.slice(0, 11).map((item) => item.values.rainAccumulation);
-        this.chartOptions = {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
+        this.setChartOptions(true);
         this.chartData = [{ data: rainValues, label: 'Regen' }];
         break;
       case ChartSubjectEnum.UvIndex:
         this.selectedChartSubject = ChartSubjectEnum.UvIndex;
         const uvIndexValues = this.weather.slice(0, 11).map((item) => item.values.uvIndex);
-        this.chartOptions = {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
+        this.setChartOptions(true);
         this.chartData = [{ data: uvIndexValues, label: 'UV-index' }];
         break;
+    }
+  }
+
+  setChartOptions(beginAtZero: boolean) {
+    this.chartOptions = {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: beginAtZero
+        }
+      }
     }
   }
 }
